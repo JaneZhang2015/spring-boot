@@ -38,6 +38,7 @@ import org.springframework.context.annotation.Import;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
+//给容器中导入Registrar组件，Registrar批量导入组件
 @Import(AutoConfigurationPackages.Registrar.class)
 public @interface AutoConfigurationPackage {
 

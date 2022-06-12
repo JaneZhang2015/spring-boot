@@ -122,6 +122,8 @@ public abstract class AutoConfigurationPackages {
 	 */
 	static class Registrar implements ImportBeanDefinitionRegistrar, DeterminableImports {
 
+		//AnnotationMetadata 注解源信息，SpringBootApplication 标注在Main Class 上
+		//获取到Main Class 包名，然后把包下的所有组件批量注册进去
 		@Override
 		public void registerBeanDefinitions(AnnotationMetadata metadata, BeanDefinitionRegistry registry) {
 			register(registry, new PackageImports(metadata).getPackageNames().toArray(new String[0]));
